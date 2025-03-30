@@ -29,7 +29,7 @@ def get_players(db: Session,
     return query.offset(skip).limit(limit).all()
 
 #get performance
-def get_performance(db: Session,
+def get_performances(db: Session,
                     skip: int = 0,
                     limit: int = 100,
                     min_last_changed_date: date = None,):
@@ -41,7 +41,7 @@ def get_performance(db: Session,
 #get league
 def get_league(db: Session,
                league_id: int = None):
-    return db.queury(models.League).filter(models.League.league_id == league_id).first()
+    return db.query(models.League).filter(models.League.league_id == league_id).first()
 
 
 #get leagues
